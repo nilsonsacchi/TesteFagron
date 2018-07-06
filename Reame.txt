@@ -1,0 +1,17 @@
+Teste Fagron Cadastro de Cliente
+
+Tecnologias:
+
+	VS2017 community
+	JavaScript
+	NodeJs
+	Angular 
+	Sql Server 2014
+	
+Não foi usado componente de persistência (ADO)
+
+Em Models: ClienteDataAccess esta minha string de conexão com o banco de dados
+
+Na pasta raiz, existe o banco de dados com a tabela e script das procs usadas
+
+	

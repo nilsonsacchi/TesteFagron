@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+<body>
+	<h1>{{title}}</h1>
+	<h3>Cliente</h3>
+	<hr />
+	<form [formGroup]="clienteForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+		<div class="form-group row">
+			<label class=" control-label col-md-12" for="Name">Nome</label>
+			<div class="col-md-4">
+				<input class="form-control" type="text" formControlName="name">
+			</div>
+			<span class="text-danger" *ngIf="clienteForm.hasError('required', 'name') && formDir.submitted">
+				Nome é obrigatório.
+			</span>
+		</div>
+
+		<div class="form-group row">
+			<label class=" control-label col-md-12" for="Name">Sobrenome</label>
+			<div class="col-md-4">
+				<input class="form-control" type="text" formControlName="sobrenome">
+			</div>
+			<span class="text-danger" *ngIf="clienteForm.hasError('required', 'sobrenome') && formDir.submitted">
+				Sobrenome é obrigatório.
+			</span>
+		</div>
+
+		<div class="form-group row">
+			<label class=" control-label col-md-12" for="Name">CPF</label>
+			<div class="col-md-4">
+				<input class="form-control" type="text" formControlName="cpf">
+			</div>
+			<span class="text-danger" *ngIf="clienteForm.hasError('required', 'cpf') && formDir.submitted">
+				CPF é obrigatório
+			</span>
+		</div>
+
+		<div class="form-group row">
+			<label class=" control-label col-md-12" for="Name">Data de Nascimento</label>
+			<div class="col-md-4">
+				<input class="form-control" type="text" formControlName="dt_nasc">
+			</div>
+			<span class="text-danger" *ngIf="clienteForm.hasError('required', 'dt_nasc') && formDir.submitted">
+				Data de nascimento é obrigatório
+			</span>
+		</div>
+
+		<div class="form-group row">
+			<label class="control-label col-md-12" for="Gender">Profissão</label>
+			<div class="col-md-4">
+				<select class="form-control" data-val="true" formControlName="profissao">
+					<option value="">-- Selecione a Profissão --</option>
+					<option value="1">Programador</option>
+					<option value="2">Analista</option>
+					<option value="3">Gerente</option>
+					<option value="4">Estagiário</option>
+					<option value="5">QA</option>
+				</select>
+			</div>
+			<span class="text-danger" *ngIf="clienteForm.hasError('required', 'profissao') && formDir.submitted">
+				Profissão é obrigatório
+			</span>
+		</div>
+
+		<div class="form-group">
+			<button type="submit" class="btn btn-default">Salvar</button>
+			<button class="btn" (click)="cancel()">Cancela</button>
+		</div>
+	</form>
+</body>
+</html>

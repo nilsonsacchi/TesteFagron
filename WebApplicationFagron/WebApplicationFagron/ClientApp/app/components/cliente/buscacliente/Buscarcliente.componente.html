@@ -1,0 +1,35 @@
+﻿<h1>Cliente Data</h1>
+<p>Esse componete mostra a busca de cliente no servidor.</p>
+<p *ngIf="!cliList"><em>Loading...</em></p>
+<p>
+	<a [routerLink]="['/register-cliente']">Home</a>
+</p>
+<table class='table' *ngIf="cliList">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Nome</th>
+			<th>Sobrenome</th>
+			<th>Cpf</th>
+			<th>Data Nascimento</th>
+			<th>Idade</th>
+			<th>Profissão</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="carrega o cli do cliList">
+			<td>{{ cli.id }}</td>
+			<td>{{ cli.nome }}</td>
+			<td>{{ cli.sobrenome }}</td>
+			<td>{{ cli.cpf }}</td>
+			<td>{{ cli.dt_nasc }}</td>
+			<td>{{ cli.idade }}</td>
+			<td>{{ cli.profissao }}</td>
+			<td>
+			<td>
+				<a [routerLink]="['/cliente/edit/', cli.id]">Edita</a> 
+				<a [routerLink]="" (click)="delete(cli.id)">Apaga</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
